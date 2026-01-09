@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Matt Morrison - Frontend & iOS Developer | AI-Assisted Development Enthusiast">
+    <meta name="author" content="Matt Morrison">
+    <title>Matt Morrison - Developer Portfolio</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+        }
+        
+        .tech-badge {
+            transition: transform 0.2s ease;
+        }
+        
+        .tech-badge:hover {
+            transform: scale(1.05);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        
+        .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
+        .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
+        .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
+        .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'radical-dark': '#0d1117',
+                        'radical-darker': '#010409',
+                        'radical-purple': '#764ba2',
+                        'radical-blue': '#667eea',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-radical-darker text-gray-100">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full top-0 z-50 bg-radical-dark/95 backdrop-blur-sm border-b border-gray-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <a href="#home" class="text-xl font-bold gradient-text">Matt Morrison</a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="hover:text-radical-blue transition-colors">About</a>
+                    <a href="#technologies" class="hover:text-radical-blue transition-colors">Technologies</a>
+                    <a href="#projects" class="hover:text-radical-blue transition-colors">Projects</a>
+                    <a href="#learning" class="hover:text-radical-blue transition-colors">Learning</a>
+                    <a href="#contact" class="hover:text-radical-blue transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-300 hover:text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-radical-dark border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#about" class="block px-3 py-2 hover:bg-gray-800 rounded transition-colors">About</a>
+                <a href="#technologies" class="block px-3 py-2 hover:bg-gray-800 rounded transition-colors">Technologies</a>
+                <a href="#projects" class="block px-3 py-2 hover:bg-gray-800 rounded transition-colors">Projects</a>
+                <a href="#learning" class="block px-3 py-2 hover:bg-gray-800 rounded transition-colors">Learning</a>
+                <a href="#contact" class="block px-3 py-2 hover:bg-gray-800 rounded transition-colors">Contact</a>
+            </div>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center px-4 pt-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 fade-in-up">
+                Hello, I'm <span class="gradient-text">Matt!</span> 👋
+            </h1>
+            <p class="text-xl md:text-2xl text-gray-300 mb-8 fade-in-up animate-delay-1">
+                Frontend & iOS Developer | AI-Assisted Development Enthusiast | Continuous Learner
+            </p>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto mb-12 fade-in-up animate-delay-2">
+                I'm a web and iOS developer based in Adelaide, South Australia. I'm passionate about crafting intuitive user experiences through clean code and modern development practices.
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center fade-in-up animate-delay-3">
+                <a href="#projects" class="gradient-bg text-white px-8 py-3 rounded-full font-semibold hover:opacity-90 transition-opacity">
+                    View Projects
+                </a>
+                <a href="#contact" class="border-2 border-radical-blue text-radical-blue px-8 py-3 rounded-full font-semibold hover:bg-radical-blue hover:text-white transition-all">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-radical-dark">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Development Philosophy</h2>
+            <div class="bg-radical-darker p-8 rounded-2xl border border-gray-800">
+                <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                    I believe in embracing modern tools to maximize productivity and learning. By combining traditional coding fundamentals with AI-assisted development, I can focus on solving problems creatively while building robust, well-architected applications.
+                </p>
+                <p class="text-lg text-gray-300 leading-relaxed">
+                    I embrace AI-powered development tools to accelerate learning and build better software faster. When I'm not coding, you'll find me at the gym or diving into my favorite video games.
+                </p>
+                <div class="mt-8 pt-8 border-t border-gray-800">
+                    <p class="text-gray-400 italic">
+                        <i class="fas fa-quote-left mr-2"></i>
+                        Continuously learning, consistently building, intelligently assisted.
+                        <i class="fas fa-quote-right ml-2"></i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-20 px-4">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Technologies & Tools</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="tech-badge bg-radical-dark p-6 rounded-xl text-center border border-gray-800 card-hover">
+                    <i class="fab fa-html5 text-5xl mb-3" style="color: #E34F26;"></i>
+                    <p class="font-semibold">HTML5</p>
+                </div>
+                <div class="tech-badge bg-radical-dark p-6 rounded-xl text-center border border-gray-800 card-hover">
+                    <i class="fab fa-css3-alt text-5xl mb-3" style="color: #1572B6;"></i>
+                    <p class="font-semibold">CSS3</p>
+                </div>
+                <div class="tech-badge bg-radical-dark p-6 rounded-xl text-center border border-gray-800 card-hover">
+                    <i class="fab fa-js text-5xl mb-3" style="color: #F7DF1E;"></i>
+                    <p class="font-semibold">JavaScript</p>
+                </div>
+                <div class="tech-badge bg-radical-dark p-6 rounded-xl text-center border border-gray-800 card-hover">
+                    <i class="fas fa-code text-5xl mb-3" style="color: #007ACC;"></i>
+                    <p class="font-semibold">TypeScript</p>
+                </div>
+                <div class="tech-badge bg-radical-dark p-6 rounded-xl text-center border border-gray-800 card-hover">
+                    <i class="fab fa-swift text-5xl mb-3" style="color: #FA7343;"></i>
+                    <p class="font-semibold">Swift</p>
+                </div>
+                <div class="tech-badge bg-radical-dark p-6 rounded-xl text-center border border-gray-800 card-hover">
+                    <i class="fab fa-react text-5xl mb-3" style="color: #61DAFB;"></i>
+                    <p class="font-semibold">React</p>
+                </div>
+                <div class="tech-badge bg-radical-dark p-6 rounded-xl text-center border border-gray-800 card-hover">
+                    <i class="fas fa-database text-5xl mb-3" style="color: #3ECF8E;"></i>
+                    <p class="font-semibold">Supabase</p>
+                </div>
+                <div class="tech-badge bg-radical-dark p-6 rounded-xl text-center border border-gray-800 card-hover">
+                    <i class="fas fa-server text-5xl mb-3" style="color: #000000; background: white; padding: 8px; border-radius: 8px;"></i>
+                    <p class="font-semibold">Vercel</p>
+                </div>
+            </div>
+            
+            <div class="bg-radical-dark p-6 rounded-xl border border-gray-800 text-center">
+                <p class="text-gray-300">
+                    <i class="fas fa-robot mr-2 text-radical-blue"></i>
+                    <strong>Development Workflow:</strong> AI-assisted coding with Claude, GitHub Copilot, and other modern AI tools
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 px-4 bg-radical-dark">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Featured Projects</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Workplace Time Keeper -->
+                <div class="bg-radical-darker rounded-2xl overflow-hidden border border-gray-800 card-hover">
+                    <div class="gradient-bg h-2"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fab fa-apple text-3xl mr-3 text-gray-400"></i>
+                            <h3 class="text-2xl font-bold">Workplace Time Keeper</h3>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            A native iOS application designed to help users track and manage their work hours efficiently. Built with Swift and SwiftUI, featuring an intuitive interface for logging time entries and generating reports.
+                        </p>
+                        <a href="https://workplacetimekeeper.com" target="_blank" class="inline-flex items-center text-radical-blue hover:text-radical-purple transition-colors">
+                            View Site <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Lofte -->
+                <div class="bg-radical-darker rounded-2xl overflow-hidden border border-gray-800 card-hover">
+                    <div class="gradient-bg h-2"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fab fa-apple text-3xl mr-3 text-gray-400"></i>
+                            <h3 class="text-2xl font-bold">Lofte</h3>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            An iOS application showcasing modern Swift development practices and SwiftUI capabilities.
+                        </p>
+                        <span class="inline-flex items-center text-gray-500">
+                            <i class="fas fa-spinner fa-spin mr-2"></i>
+                            In Progress
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- BookingHub -->
+                <div class="bg-radical-darker rounded-2xl overflow-hidden border border-gray-800 card-hover">
+                    <div class="gradient-bg h-2"></div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <i class="fas fa-globe text-3xl mr-3 text-gray-400"></i>
+                            <h3 class="text-2xl font-bold">BookingHub</h3>
+                        </div>
+                        <p class="text-gray-400 mb-6">
+                            A full-featured web application for managing bookings and reservations. Built with TypeScript and React on the frontend, powered by Supabase for backend services and database management, and deployed on Vercel.
+                        </p>
+                        <a href="https://booking-hub.app" target="_blank" class="inline-flex items-center text-radical-blue hover:text-radical-purple transition-colors">
+                            View Site <i class="fas fa-external-link-alt ml-2 text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Currently Learning Section -->
+    <section id="learning" class="py-20 px-4">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl font-bold mb-12 text-center gradient-text">Currently Learning</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-radical-dark p-6 rounded-xl border border-gray-800 flex items-start">
+                    <i class="fas fa-mobile-alt text-2xl text-radical-blue mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold mb-2">Advanced JavaScript & TypeScript patterns</h3>
+                        <p class="text-sm text-gray-400">Mastering modern patterns and best practices</p>
+                    </div>
+                </div>
+                
+                <div class="bg-radical-dark p-6 rounded-xl border border-gray-800 flex items-start">
+                    <i class="fab fa-react text-2xl text-radical-blue mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold mb-2">React component architecture</h3>
+                        <p class="text-sm text-gray-400">Building scalable component systems</p>
+                    </div>
+                </div>
+                
+                <div class="bg-radical-dark p-6 rounded-xl border border-gray-800 flex items-start">
+                    <i class="fas fa-database text-2xl text-radical-blue mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold mb-2">Supabase backend development</h3>
+                        <p class="text-sm text-gray-400">Real-time features and backend services</p>
+                    </div>
+                </div>
+                
+                <div class="bg-radical-dark p-6 rounded-xl border border-gray-800 flex items-start">
+                    <i class="fab fa-swift text-2xl text-radical-blue mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold mb-2">SwiftUI advanced patterns</h3>
+                        <p class="text-sm text-gray-400">Animations and modern iOS development</p>
+                    </div>
+                </div>
+                
+                <div class="bg-radical-dark p-6 rounded-xl border border-gray-800 flex items-start">
+                    <i class="fas fa-server text-2xl text-radical-blue mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold mb-2">Database design and SQL optimization</h3>
+                        <p class="text-sm text-gray-400">Performance and scalability focus</p>
+                    </div>
+                </div>
+                
+                <div class="bg-radical-dark p-6 rounded-xl border border-gray-800 flex items-start">
+                    <i class="fas fa-building text-2xl text-radical-blue mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold mb-2">iOS app architecture</h3>
+                        <p class="text-sm text-gray-400">Best practices and design patterns</p>
+                    </div>
+                </div>
+                
+                <div class="bg-radical-dark p-6 rounded-xl border border-gray-800 flex items-start md:col-span-2">
+                    <i class="fas fa-robot text-2xl text-radical-blue mr-4 mt-1"></i>
+                    <div>
+                        <h3 class="font-semibold mb-2">Leveraging AI tools for rapid prototyping</h3>
+                        <p class="text-sm text-gray-400">Problem-solving with AI-assisted development</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-radical-dark">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-8 gradient-text">Let's Connect!</h2>
+            <p class="text-lg text-gray-300 mb-12">
+                Feel free to explore my repositories, and don't hesitate to reach out if you have any questions, want to collaborate, or just fancy a chat about development!
+            </p>
+            
+            <div class="flex justify-center gap-6">
+                <a href="https://github.com/MattMorrison94" target="_blank" class="bg-radical-darker hover:bg-gray-800 text-white px-8 py-4 rounded-xl font-semibold transition-all border border-gray-800 flex items-center card-hover">
+                    <i class="fab fa-github text-2xl mr-3"></i>
+                    GitHub Profile
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="py-8 px-4 border-t border-gray-800">
+        <div class="max-w-6xl mx-auto text-center text-gray-400">
+            <p class="mb-2">
+                <i class="fas fa-rocket mr-2"></i>
+                Continuously learning, consistently building, intelligently assisted.
+            </p>
+            <p class="text-sm">
+                &copy; 2026 Matt Morrison. Built with HTML, Tailwind CSS, and JavaScript.
+            </p>
+        </div>
+    </footer>
+    
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
